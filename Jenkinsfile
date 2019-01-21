@@ -6,7 +6,7 @@ parallel build1: {node {
    sleep 4
 }
 deleteDir()
-}stage('build'), build2: {node {
+}, build2: {node {
     deleteDir()
     checkout scm
    sh label: '', script: 'echo "GoodBye World" > Goodbye.txt'
@@ -14,4 +14,4 @@ deleteDir()
    sleep 4
 }
 deleteDir()
-}stage('build1')
+}
