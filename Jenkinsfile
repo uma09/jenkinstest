@@ -1,5 +1,5 @@
-parallel build1: {node {
-    stage('build') {
+parallel stage('build') {
+    build1: {node {
     deleteDir()
     checkout scm
    sh label: '', script: 'echo "Hello World" > hello.txt'
@@ -8,8 +8,8 @@ parallel build1: {node {
     }
 }
 deleteDir()
-}, build2: {node {
-    stage('build1') {
+}, stage('build1') {
+    build2: {node {
     deleteDir()
     checkout scm
    sh label: '', script: 'echo "GoodBye World" > Goodbye.txt'
